@@ -9,9 +9,14 @@ $this->headTitle()->append($this->setting('installation_title', 'Omeka S'));
 $this->headLink()->prependStylesheet($this->assetUrl('css/style.css'));
 $this->headLink()->prependStylesheet($this->assetUrl('css/iconfonts.css', 'Omeka'));
 $this->headLink()->prependStylesheet('//fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic,700italic,700');
+$this->headLink()->appendStylesheet($this->assetUrl('css/bootstrap.min.css'));
+$this->headLink()->appendStylesheet($this->assetUrl('css/custom.css'));
 $this->headScript()->prependFile($this->assetUrl('js/default.js'));
+$this->headScript()->prependFile($this->assetUrl('js/bootstrap.bundle.min.js'));
 $this->headScript()->prependFile($this->assetUrl('js/global.js', 'Omeka'));
 $this->headScript()->prependFile($this->assetUrl('vendor/jquery/jquery.min.js', 'Omeka'));
+$this->headScript()->appendFile($this->assetUrl('js/script.js'));
+$this->headScript()->appendFile($this->assetUrl('js/fontawesome.js'));
 $this->jsTranslate();
 $this->trigger('view.layout');
 $userBar = $this->userBar();
@@ -41,39 +46,114 @@ $userBar = $this->userBar();
         </style>
     </head>
 
-    <?php echo $this->htmlElement('body'); ?>
-        <?php echo $userBar; ?>
-        <header>
-            <h1>
-                <a href="<?php echo $site->url(); ?>" class="site-title">
-                <?php if ($this->themeSetting('logo')): ?>
-                    <img src="<?php echo $this->themeSettingAssetUrl('logo'); ?>" alt="<?php echo $escape($siteTitle); ?>" />
-                <?php else: ?>
-                    <?php echo $escape($siteTitle); ?>
-                <?php endif; ?>
-                </a>
-            </h1>
-            <div id="search">
-                <?php echo $this->partial('common/search-form'); ?>
-            </div>
+    <!--<?php echo $this->htmlElement('body'); ?>-->
+    <body class="h-100 page">
+        <div class="h-100 d-none d-md-block">
+            <a id="skipnav" href="#content"><?php echo $this->translate('Skip to main content'); ?></a>
+            <?php echo $userBar; ?>
+            <!--<header>
+                <h1>
+                    <a href="<?php echo $site->url(); ?>" class="site-title">
+                    <?php if ($this->themeSetting('logo')): ?>
+                        <img src="<?php echo $this->themeSettingAssetUrl('logo'); ?>" alt="<?php echo $escape($siteTitle); ?>" />
+                    <?php else: ?>
+                        <?php echo $escape($siteTitle); ?>
+                    <?php endif; ?>
+                    </a>
+                </h1>
+                <div id="search">
+                    <?php echo $this->partial('common/search-form'); ?>
+                </div>
 
-            <nav>
-            <?php
-            echo $site->publicNav()->menu()->renderMenu(null, [
-                'maxDepth' => $this->themeSetting('nav_depth') - 1
-            ]);
-            ?>
-            </nav>
-        </header>
-        <div id="content" role="main">
-            <?php echo $this->content; ?>
+                <nav>
+                <?php
+                echo $site->publicNav()->menu()->renderMenu(null, [
+                    'maxDepth' => $this->themeSetting('nav_depth') - 1
+                ]);
+                ?>
+                </nav>
+            </header>-->
+            <div class="h-100 position-relative" id="content" role="main">
+                <div id="nav-div" class="d-flex position-relative">
+                    <div class="d-flex flex-column align-items-center" id="main-nav">
+                        <div class="w-100 d-flex align-items-center justify-content-center mb-2" id="nav-logo">
+                            BRAND LOGO HERE
+                        </div>
+                        <div class="single-main-nav cursor-pointer mb-1 font-weight-bold d-flex justify-content-between align-items-center px-4 py-2 mb-2" data-view-type="year">
+                            <div class="d-flex align-items-center">
+                                <i class="single-nav-icon fas fa-calendar-day fa-lg mr-2"></i> <span class="mx-1">YEAR</span>
+                            </div>
+                            <div>
+                                <i class="fas fa-angle-right"></i>
+                            </div>
+                        </div>
+                        <div class="single-main-nav cursor-pointer mb-1 font-weight-bold d-flex justify-content-between align-items-center px-4 py-2 mb-2" data-view-type="place">
+                            <div class="d-flex align-items-center">
+                                <i class="single-nav-icon fas fa-map-signs fa-lg mr-2"></i> <span class="mx-1">PLACE</span>
+                            </div>
+                            <div>
+                                <i class="fas fa-angle-right"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sub-nav font-form position-absolute h-100 d-flex flex-column py-4" id="sub-nav-year">
+                    </div>
+                    <div class="sub-nav font-form position-absolute h-100 d-flex flex-column py-4" id="sub-nav-place">
+                        <div class="d-flex mb-3 px-4">
+                            <div class="font-weight-bold mr-4">A</div>
+                            <div class="w-100">
+                                <div class="single-sub-nav cursor-pointer px-2">Ang Mo Kio</div>
+                                <div class="single-sub-nav cursor-pointer px-2">Ayer Rajah</div>
+                            </div>
+                        </div>
+                        <div class="d-flex mb-3 px-4">
+                            <div class="font-weight-bold mr-4">B</div>
+                            <div class="w-100">
+                                <div class="single-sub-nav cursor-pointer px-2">Balestier</div>
+                                <div class="single-sub-nav cursor-pointer px-2">Bartley</div>
+                                <div class="single-sub-nav cursor-pointer px-2">Bedok</div>
+                                <div class="single-sub-nav cursor-pointer px-2">Bidadari</div>
+                                <div class="single-sub-nav cursor-pointer px-2">Bishan</div>
+                                <div class="single-sub-nav cursor-pointer px-2">Boon Lay</div>
+                                <div class="single-sub-nav cursor-pointer px-2">Bukit Batok</div>
+                                <div class="single-sub-nav cursor-pointer px-2">Bukit Panjang</div>
+                                <div class="single-sub-nav cursor-pointer px-2">Bukit Timah</div>
+                                <div class="single-sub-nav cursor-pointer px-2">Bugis</div>
+                            </div>
+                        </div>
+                        <div class="d-flex mb-3 px-4">
+                            <div class="font-weight-bold mr-4">C</div>
+                            <div class="w-100">
+                                <div class="single-sub-nav cursor-pointer px-2">Changi</div>
+                                <div class="single-sub-nav cursor-pointer px-2">Chinatown</div>
+                                <div class="single-sub-nav cursor-pointer px-2">Choa Chu Kang</div>
+                                <div class="single-sub-nav cursor-pointer px-2">City Hall</div>
+                                <div class="single-sub-nav cursor-pointer px-2">Clarke Quay</div>
+                                <div class="single-sub-nav cursor-pointer px-2">Clementi</div>
+                            </div>
+                        </div>
+                        <div class="d-flex px-4">
+                            <div class="font-weight-bold mr-4">D</div>
+                            <div class="w-100">
+                                <div class="single-sub-nav cursor-pointer px-2">Dairy Farm</div>
+                                <div class="single-sub-nav cursor-pointer px-2">Dover</div>
+                            </div>
+                        </div>
+                    </div>
+                    <footer class="p-0">
+                        <?php if ($footerContent = $this->themeSetting('footer')): ?>
+                        <?php echo $footerContent; ?>
+                        <?php else: ?>
+                            <?php echo $this->translate('Powered by Omeka S'); ?>
+                        <?php endif; ?>
+                    </footer>
+                </div>
+                <?php echo $this->content; ?>
+            </div>
         </div>
-        <footer>
-            <?php if ($footerContent = $this->themeSetting('footer')): ?>
-            <?php echo $footerContent; ?>
-            <?php else: ?>
-                <?php echo $this->translate('Powered by Omeka S'); ?>
-            <?php endif; ?>
-        </footer>
+        <div class="h-100 d-block d-md-none d-flex flex-column align-items-center justify-content-center text-center px-3">
+            <h1 class="font-large font-weight-bold mb-4">Oops!</h1>
+            <p class="font-subsubheader">Your current browser resolution is not supported. Only browser widths 768px and larger can view this site.</p>
+        </div>
     </body>
 </html>

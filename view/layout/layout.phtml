@@ -51,8 +51,9 @@ $userBar = $this->userBar();
         <div class="h-100 d-none d-md-block">
             <a id="skipnav" href="#content"><?php echo $this->translate('Skip to main content'); ?></a>
             <?php echo $userBar; ?>
-            <!--<header>
-                <h1>
+            <header class="px-4 d-flex align-items-center">
+                <div class="font-subheader px-0 ml-0 mr-3 d-flex align-items-center justify-content-center font-weight-bold" id="brand-logo">BRAND</div>
+                <h1 class="d-none">
                     <a href="<?php echo $site->url(); ?>" class="site-title">
                     <?php if ($this->themeSetting('logo')): ?>
                         <img src="<?php echo $this->themeSettingAssetUrl('logo'); ?>" alt="<?php echo $escape($siteTitle); ?>" />
@@ -61,24 +62,21 @@ $userBar = $this->userBar();
                     <?php endif; ?>
                     </a>
                 </h1>
-                <div id="search">
+                <!--<div id="search">
                     <?php echo $this->partial('common/search-form'); ?>
-                </div>
+                </div>-->
 
-                <nav>
+                <nav class="ml-3">
                 <?php
                 echo $site->publicNav()->menu()->renderMenu(null, [
                     'maxDepth' => $this->themeSetting('nav_depth') - 1
                 ]);
                 ?>
                 </nav>
-            </header>-->
+            </header>
             <div class="h-100 position-relative" id="content" role="main">
                 <div id="nav-div" class="d-flex position-relative">
-                    <div class="d-flex flex-column align-items-center" id="main-nav">
-                        <div class="w-100 d-flex align-items-center justify-content-center mb-2" id="nav-logo">
-                            BRAND LOGO HERE
-                        </div>
+                    <div class="d-flex flex-column align-items-center py-3" id="main-nav">
                         <div class="single-main-nav cursor-pointer mb-1 font-weight-bold d-flex justify-content-between align-items-center px-4 py-2 mb-2" data-view-type="year">
                             <div class="d-flex align-items-center">
                                 <i class="single-nav-icon fas fa-calendar-day fa-lg mr-2"></i> <span class="mx-1">YEAR</span>

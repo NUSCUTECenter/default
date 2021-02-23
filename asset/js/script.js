@@ -39,4 +39,8 @@ $(document).ready(function() {
 			activeViewType = "";
 		}
 	})
+
+	$("#btn-return").on("click", function() {
+		window.close();
+	})
 })

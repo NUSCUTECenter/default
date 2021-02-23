@@ -41,6 +41,6 @@ $(document).ready(function() {
 	})
 
 	$("#btn-return").on("click", function() {
-		window.close();
+		history.back();
 	})
 })

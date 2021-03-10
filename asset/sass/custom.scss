@@ -3,12 +3,12 @@ html, body {
     background-color: black;
     color: #CCC;
 
-    @media screen and (min-width:768px) {
+    /*@media screen and (min-width:768px) {
         font-size: 14px;
-    }
+    }*/
 
     @media screen and (min-width:992px) {
-        font-size: 15px
+        font-size: 14px
     }
 
     @media screen and (min-width:1200px) {
@@ -192,19 +192,19 @@ header {
     z-index: 10000;
     background-color: #1f1e26;
 
-    @media screen and (min-width:768px) {
+    /*@media screen and (min-width:768px) {
         min-width: 350px;
         max-width: 350px;
-    }
+    }*/
 
     @media screen and (min-width:992px) {
-        min-width: 425px;
-        max-width: 425px;
+        min-width: 500px;
+        max-width: 500px;
     }
 
     @media screen and (min-width:1200px) {
-        min-width: 500px;
-        max-width: 500px;
+        min-width: 600px;
+        max-width: 600px;
     }
    
     .media-list {
@@ -248,7 +248,30 @@ header {
     }
 
     #location-details-div {
+        height: 425px;
         overflow: auto;
+
+        .single-property {
+            @media screen and (min-width:992px) {
+                font-size: 14px
+            }
+
+            @media screen and (min-width:1200px) {
+                font-size: 16px;
+            }
+
+            .property-header {
+                @media screen and (min-width:992px) {
+                    font-size: 14px
+                }
+
+                @media screen and (min-width:1200px) {
+                    font-size: 16px;
+                }
+                
+                line-height: 1.5;
+            }
+        }
     }
 
     #btn-return {

@@ -8,11 +8,11 @@ html, body {
     }*/
 
     @media screen and (min-width:992px) {
-        font-size: 14px
+        font-size: 13px
     }
 
     @media screen and (min-width:1200px) {
-        font-size: 16px;
+        font-size: 14px;
     }
 }
 
@@ -191,6 +191,7 @@ header {
     border: 1px solid #333333;
     z-index: 10000;
     background-color: #1f1e26;
+    opacity: 0.95;
 
     /*@media screen and (min-width:768px) {
         min-width: 350px;
@@ -240,10 +241,13 @@ header {
 
     .single-toggle {
         height: 75px;
-        border: 1px solid #333333;
+        border: 1px solid #555555;
+        transition: all 0.2s;
 
         &:hover, &.active {
-            background-color: #333333;
+            background-color: #555555;
+            font-weight: bold;
+            transition: all 0.2s;
         }
     }
 
@@ -253,23 +257,42 @@ header {
 
         .single-property {
             @media screen and (min-width:992px) {
-                font-size: 14px
+                font-size: 13px
             }
 
             @media screen and (min-width:1200px) {
-                font-size: 16px;
+                font-size: 14px;
             }
 
             .property-header {
                 @media screen and (min-width:992px) {
-                    font-size: 14px
+                    font-size: 13px
                 }
 
                 @media screen and (min-width:1200px) {
-                    font-size: 16px;
+                    font-size: 14px;
                 }
-                
+
                 line-height: 1.5;
+            }
+
+            .uri-value-link {
+                color: #0dcaf0;
+            }
+
+            .resource-link {
+                pointer-events: none;
+
+                img {
+                    max-width: 150px;
+                    max-height: 150px;
+                    object-fit: contain;
+                    height: auto;
+                }
+            }
+
+            .resource-name {
+                display: none;
             }
         }
     }

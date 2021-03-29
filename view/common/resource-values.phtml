@@ -6,8 +6,12 @@ $labelInfo = $this->setting('property_label_information');
 <?php foreach ($values as $term => $propertyData): ?>
     <!-- For each subsection (site\item\resource-values.phtml) -->
     <div class="single-property property d-flex align-items-start mb-4" id="<?php echo substr($term, strpos($term, ':')+1) ?>">
+        <!--<?php foreach ($itemMedia as $media): ?>
+                <?php echo $media->linkPretty(); ?>
+            <?php endforeach; ?>-->
+
         <!-- subsection label (site\item\resource-values.phtml) -->
-        <h4 class="property-header d-flex-inline col-4">
+        <h4 class="property-header d-flex-inline text-right col-4">
         <?php if ($propertyData['alternate_label']): ?>
             <!-- this label -->
         <?php echo $escape($propertyData['alternate_label']); ?>

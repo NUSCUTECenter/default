@@ -11,10 +11,22 @@ $itemMedia = $item->media();
         <!-- Adjust layout for image (site\item\show.phtml) -->
         <?php if (!$embedMedia && $itemMedia): ?>
         <div class="media-list position-relative">
-            <?php foreach ($itemMedia as $media): ?>
-                <?php echo $media->linkPretty(); ?>
-            <?php endforeach; ?>
+            <!-- Loads only the first image as feature header image -->
+            <?php echo $itemMedia[0]->linkPretty(); ?>
 
+            <!-- Loads multiple images -->
+            <!--<?php foreach ($itemMedia as $media): ?>
+                <?php echo $media->linkPretty(); ?>
+            <?php endforeach; ?>-->
+
+            <!-- Title (site\item\show.phtml) -->
+            <div class="font-subsubheader d-flex justify-content-center position-absolute" id="location-title">
+                <?php echo $this->pageTitle($item->displayTitle(), 2); ?>
+            </div>
+        </div>
+        <?php else: ?>
+        <div class="d-flex align-items-center justify-content-center media-list position-relative">
+            No image available
             <!-- Title (site\item\show.phtml) -->
             <div class="font-subsubheader d-flex justify-content-center position-absolute" id="location-title">
                 <?php echo $this->pageTitle($item->displayTitle(), 2); ?>
@@ -47,6 +59,12 @@ $itemMedia = $item->media();
 
             <!-- Display Item values (site\item\show.phtml) -->
             <?php echo $item->displayValues(); ?>
+
+            <div class="single-property property d-flex align-items-start mb-4" id="gallery">
+                <?php foreach ($itemMedia as $media): ?>
+                    <?php echo $media->linkPretty(); ?>
+                <?php endforeach; ?>
+            </div>
 
             <!-- Adjust layout for item sets (site\item\show.phtml) -->
             <!--<div class="property">

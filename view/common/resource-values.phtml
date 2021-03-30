@@ -17,7 +17,7 @@ $labelInfo = $this->setting('property_label_information');
         <?php echo $escape($propertyData['alternate_label']); ?>
         <?php else: ?>
             <!-- this label 2 -->
-        <?php echo $escape($translate($propertyData['property']->label())); ?>
+        <?php echo ucFirst($escape($translate($propertyData['property']->label()))); ?>
         <?php endif; ?>
         <?php if ('term' === $labelInfo): ?>
             <!-- this label 3 -->

@@ -60,9 +60,11 @@ $itemMedia = $item->media();
             <!-- Display Item values (site\item\show.phtml) -->
             <?php echo $item->displayValues(); ?>
 
-            <div class="single-property property d-flex align-items-start mb-4" id="gallery">
+            <div class="single-property property d-flex align-items-start justify-content-start mb-4 flex-wrap" id="gallery">
                 <?php foreach ($itemMedia as $media): ?>
-                    <?php echo $media->linkPretty(); ?>
+                    <div class="mx-1 mb-3">
+                        <?php echo $media->linkPretty(); ?>
+                    </div>
                 <?php endforeach; ?>
             </div>
 
@@ -111,9 +113,9 @@ $itemMedia = $item->media();
 
 <script type="text/javascript">
     const properties = {
-        location: ["streetDetails", "postalCode", "aliases", "latLong", "currLandUse", "builtStructures", "occupant", "siteCondition", "currSiteType", "prevSiteType"],
-        architecture: ["owner", "yearBuilt", "yearRenovated", "architecture", "features", "style"],
-        history: ["history", "memories", "intangibleHeritage", "historicalImage"],
+        location: ["alternative", "otherNames", "zipcode", "blockNoHouseNo", "roadStreetName", "currentLandUse", "previousLandUse", "anyBuiltStructures", "visibleDatableFeaturesOnSite", "mediator", "physicalConditionOfSite", "currentSiteType", "previousSiteType"],
+        architecture: ["owner", "created", "modified", "architecturalStyle", "architectureFeaturesAndDescription", "additionalArchitecturalComments"],
+        history: ["historyOfSite", "description", "socialValueOrCollectiveMemory", "descriptionOfSocialValue", "typeOfIntangibleCulturalHeritageObserved"],
         gallery: ["gallery"],
         references: ["references"],
     };

@@ -4,13 +4,13 @@ $escape = $this->plugin('escapeHtml');
 $labelInfo = $this->setting('property_label_information');
 ?>
 <?php foreach ($values as $term => $propertyData): ?>
-    <!-- For each subsection (site\item\resource-values.phtml) -->
+    <!-- For each subsection (view\common\resource-values.phtml) -->
     <div class="single-property property d-flex align-items-start mb-4" id="<?php echo substr($term, strpos($term, ':')+1) ?>">
         <!--<?php foreach ($itemMedia as $media): ?>
                 <?php echo $media->linkPretty(); ?>
             <?php endforeach; ?>-->
 
-        <!-- subsection label (site\item\resource-values.phtml) -->
+        <!-- subsection label (view\common\resource-values.phtml) -->
         <h4 class="property-header d-flex-inline text-right col-4">
         <?php if ($propertyData['alternate_label']): ?>
             <!-- this label -->
@@ -28,7 +28,7 @@ $labelInfo = $this->setting('property_label_information');
         <?php endif; ?>
         </h4>
 
-        <!-- subsection value (site\item\resource-values.phtml) -->
+        <!-- subsection value (view\common\resource-values.phtml) -->
         <div class="values col-8">
         <?php foreach ($propertyData['values'] as $value): ?>
             <?php
@@ -45,9 +45,9 @@ $labelInfo = $this->setting('property_label_information');
             }
             ?>
             <div class="<?php echo implode(' ', $class); ?>" lang="<?php echo $escape($value->lang()); ?>">
-                <?php if ($language = $value->lang()): ?>
+                <!--<?php if ($language = $value->lang()): ?>
                 <span class="language"><?php echo $language; ?></span>
-                <?php endif; ?>
+                <?php endif; ?>-->
                 <?php echo $value->asHtml(); ?>
             </div>
         <?php endforeach; ?>

@@ -103,6 +103,15 @@ header {
     }
 } 
 
+.form-group {
+    .form-control {
+        border-radius: 0.25rem;
+        height: calc(1.5em + .75rem + 2px);
+        padding: .375rem .75rem;
+        border: 1px solid #CED4DA;
+    }
+}
+
 #content {
     max-width: 100%;
     max-height: 800px;
@@ -149,6 +158,15 @@ header {
 
                 &:hover {
                     font-weight: bold;
+                }
+
+                .stretched-link {
+                    color: #CCC !important;
+                    text-decoration: none;
+
+                    &:hover {
+                        color: #36ABC1 !important;
+                    }
                 }
             }
         }

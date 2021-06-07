@@ -43,4 +43,20 @@ $(document).ready(function() {
 	$("#btn-return").on("click", function() {
 		history.back();
 	})
+
+	$("#search-locations").on("keyup", function() {
+		let searchTerm = $(this).val().toLowerCase();
+
+		if(searchTerm !== "") {
+			$(".single-location").each((index, location) => {
+				if($(location).data("locationName").toLowerCase().includes(searchTerm)) {
+					$(location).addClass("d-flex").removeClass("d-none");
+				} else {
+					$(location).removeClass("d-flex").addClass("d-none");
+				}
+			})
+		} else {
+			$(".single-location").removeClass("d-none");
+		}
+	})
 })

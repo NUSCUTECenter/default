@@ -17,14 +17,14 @@ $(document).ready(function() {
 		if(activeViewType !== viewType) {
 			if(activeViewType !== "") {
 				$(`#sub-nav-${activeViewType}`).animate({
-					left: "-=250"
+					left: "-=300"
 				}, 300);
 
 				$(".single-main-nav").removeClass("active");			
 			}
 
 			$(`#sub-nav-${viewType}`).animate({
-				left: "+=250"
+				left: "+=300"
 			}, 300);
 
 			$(this).addClass("active");
@@ -33,7 +33,7 @@ $(document).ready(function() {
 			$(this).removeClass("active");
 
 			$(`#sub-nav-${viewType}`).animate({
-				left: "-=250"
+				left: "-=300"
 			}, 300);
 
 			activeViewType = "";
@@ -57,6 +57,33 @@ $(document).ready(function() {
 			})
 		} else {
 			$(".single-location").removeClass("d-none");
+		}
+	})
+
+	$(".leaflet-control-layers-overlays .leaflet-control-layers-selector").each(function() {
+		$(this).click();
+	})
+
+	$(".single-year-select").click(function() {
+		if(!$(this).hasClass("active")) {
+			var yearToView = $(this).data("year-view");
+
+			// Deselect any checked overlays
+			$(".single-year-select.active").each(function() {
+				$(this).removeClass("active");
+			})
+
+			$(".leaflet-control-layers-overlays .leaflet-control-layers-selector:checked").each(function() {
+				$(this).click();
+			})
+
+			// Activate overlay
+			if(yearToView !== "default") {
+				var checkboxNumToCheck = parseInt(yearToView);
+				($(".leaflet-control-layers-overlays .leaflet-control-layers-selector")[0]).click();
+			}
+
+			$(this).addClass("active");
 		}
 	})
 })

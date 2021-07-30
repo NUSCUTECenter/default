@@ -113,11 +113,11 @@ $itemMedia = $item->media();
 
 <script type="text/javascript">
     const properties = {
-        location: ["alternative", "otherNames", "zipcode", "blockNoHouseNo", "roadStreetName", "currentLandUse", "previousLandUse", "anyBuiltStructures", "visibleDatableFeaturesOnSite", "mediator", "physicalConditionOfSite", "currentSiteType", "previousSiteType"],
-        architecture: ["owner", "created", "modified", "architecturalStyle", "architectureFeaturesAndDescription", "additionalArchitecturalComments"],
-        history: ["historyOfSite", "description", "socialValueOrCollectiveMemory", "descriptionOfSocialValue", "typeOfIntangibleCulturalHeritageObserved"],
+        location: ["alternative", "otherNames", "coordinates", "zipcode", "blockNoHouseNo", "roadStreetName", "currentLandUse", "previousLandUse", "anyBuiltStructures", "description", "visibleDatableFeaturesOnSite", "otherDatableFeatures", "mediator", "physicalConditionOfSite", "physicalConditionDesc", "currentSiteType", "previousSiteType"],
+        architecture: ["owner", "created", "modified", "builderArchitect", "architecturalStyle", "architecturalOtherStyle", "architectureFeaturesAndDescription", "additionalArchitecturalComments"],
+        history: ["historyOfSite", "siteHistoryDesc", "socialValueOrCollectiveMemory", "descriptionOfSocialValue", "intangibleCulturalHeritagePeriod", "intangibleCulturalHeritageType", "intagibleCulturalHeritageDesc"],
         gallery: ["gallery"],
-        references: ["references"],
+        references: ["references", "possibleFurtherReferences"],
     };
 
     $(document).ready(function() {

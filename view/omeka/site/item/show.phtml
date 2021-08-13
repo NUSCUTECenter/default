@@ -12,7 +12,7 @@ $itemMedia = $item->media();
         <?php if (!$embedMedia && $itemMedia): ?>
         <div class="media-list position-relative">
             <!-- Loads only the first image as feature header image -->
-            <?php echo $itemMedia[0]->linkPretty(); ?>
+            <?php echo $itemMedia[0]->linkPretty('large'); ?>
 
             <!-- Loads multiple images -->
             <!--<?php foreach ($itemMedia as $media): ?>
@@ -46,7 +46,7 @@ $itemMedia = $item->media();
         <!-- "Item" (site\item\show.phtml) -->
         <!--<h3><?php echo $translate('Item'); ?></h3>-->
 
-        <div class="px-3 py-3" id="location-details-div">
+        <div class="px-3 pt-3" id="location-details-div">
             <?php $this->trigger('view.show.before'); ?>
             <?php if ($embedMedia && $itemMedia): ?>
                 <div class="media-embeds">
@@ -60,9 +60,12 @@ $itemMedia = $item->media();
             <!-- Display Item values (site\item\show.phtml) -->
             <?php echo $item->displayValues(); ?>
 
-            <div class="single-property property d-flex align-items-start justify-content-start mb-4 flex-wrap" id="gallery">
+            <div class="single-property property d-flex align-items-start justify-content-start flex-wrap" id="gallery">
                 <?php foreach ($itemMedia as $media): ?>
-                    <div class="mx-1 mb-3">
+                    <div class="mx-2 mb-3 position-relative">
+                        <div class="gallery-view h-100 w-100 position-absolute d-flex justify-content-center align-items-center cursor-pointer" data-toggle="modal" data-target="#gallery-modal">
+                            <i class="fas fa-2x fa-search-plus"></i>
+                        </div>
                         <?php echo $media->linkPretty(); ?>
                     </div>
                 <?php endforeach; ?>
@@ -105,6 +108,32 @@ $itemMedia = $item->media();
 
         <div class="btn btn-sm btn-outline-info cursor-pointer position-absolute" id="btn-return">
             <i class="fas fa-angle-double-left"></i> Back to Homepage
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="gallery-modal" tabindex="-1" role="dialog" aria-labelledby="galleryModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="font-form modal-body px-0">
+                <div id="gallery-carousel-controls" class="carousel slide" data-ride="carousel" data-interval="false">
+                    <div class="carousel-inner d-flex align-items-center text-center">
+                        <?php foreach ($itemMedia as $index=>$media): ?>
+                        <div class="carousel-item <?php if($index == 0) { echo "active"; } ?>">
+                            <?php echo $media->render(); ?>
+                        </div>
+                        <?php endforeach; ?>
+                    </div>
+                    <a class="carousel-control-prev" href="#gallery-carousel-controls" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#gallery-carousel-controls" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
 </div>

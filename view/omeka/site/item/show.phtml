@@ -61,9 +61,9 @@ $itemMedia = $item->media();
             <?php echo $item->displayValues(); ?>
 
             <div class="single-property property d-flex align-items-start justify-content-start flex-wrap" id="gallery">
-                <?php foreach ($itemMedia as $media): ?>
-                    <div class="mx-2 mb-3 position-relative">
-                        <div class="gallery-view h-100 w-100 position-absolute d-flex justify-content-center align-items-center cursor-pointer" data-toggle="modal" data-target="#gallery-modal">
+                <?php foreach ($itemMedia as $index=>$media): ?>
+                    <div class="mx-2 mb-3 position-relative" data-toggle="modal" data-target="#gallery-modal">
+                        <div class="gallery-view h-100 w-100 position-absolute d-flex justify-content-center align-items-center cursor-pointer" data-target="#gallery-carousel-controls" data-slide-to="<?php echo $index; ?>">
                             <i class="fas fa-2x fa-search-plus"></i>
                         </div>
                         <?php echo $media->linkPretty(); ?>

@@ -89,17 +89,9 @@ $userBar = $this->userBar();
                                 <i class="fas fa-angle-right"></i>
                             </div>
                         </div>
-                        <div class="single-main-nav cursor-pointer mb-1 font-weight-bold justify-content-between align-items-center px-4 py-2 mb-2 d-none" data-view-type="place">
+                        <div class="single-main-nav cursor-pointer mb-1 font-weight-bold d-flex justify-content-between align-items-center px-4 py-2 mb-2" data-view-type="location">
                             <div class="d-flex align-items-center">
                                 <i class="single-nav-icon fas fa-map-signs fa-lg mr-2"></i> <span class="mx-1">PLACE</span>
-                            </div>
-                            <div>
-                                <i class="fas fa-angle-right"></i>
-                            </div>
-                        </div>
-                        <div class="single-main-nav cursor-pointer mb-1 font-weight-bold d-flex justify-content-between align-items-center px-4 py-2 mb-2" data-view-type="locations">
-                            <div class="d-flex align-items-center">
-                                <i class="single-nav-icon fas fa-map-signs fa-lg mr-2"></i> <span class="mx-1">LOCATIONS</span>
                             </div>
                             <div>
                                 <i class="fas fa-angle-right"></i>
@@ -118,61 +110,19 @@ $userBar = $this->userBar();
                                 foreach($years as $key=>$value) {
                             ?>
                             <div class="single-sub-nav cursor-pointer px-2 position-relative d-flex justify-content-center align-items-center">
-                                <div class="single-year-select stretched-link" data-year-view="<?php echo($key) ?>"><?php echo($value) ?></div>
+                                <div class="single-year-select stretched-link" data-year-view="<?php echo($key + 1) ?>"><?php echo($value) ?></div>
                             </div>
                             <?php } ?>
                         </div>
                     </div>
-                    <div class="sub-nav font-form position-absolute h-100 d-flex flex-column py-4" id="sub-nav-place">                            
-                        <div class="d-flex mb-3 px-4">
-                            <div class="font-weight-bold mr-4">A</div>
-                            <div class="w-100">
-                                <div class="single-sub-nav cursor-pointer px-2">Ang Mo Kio</div>
-                                <div class="single-sub-nav cursor-pointer px-2">Ayer Rajah</div>
-                            </div>
-                        </div>
-                        <div class="d-flex mb-3 px-4">
-                            <div class="font-weight-bold mr-4">B</div>
-                            <div class="w-100">
-                                <div class="single-sub-nav cursor-pointer px-2">Balestier</div>
-                                <div class="single-sub-nav cursor-pointer px-2">Bartley</div>
-                                <div class="single-sub-nav cursor-pointer px-2">Bedok</div>
-                                <div class="single-sub-nav cursor-pointer px-2">Bidadari</div>
-                                <div class="single-sub-nav cursor-pointer px-2">Bishan</div>
-                                <div class="single-sub-nav cursor-pointer px-2">Boon Lay</div>
-                                <div class="single-sub-nav cursor-pointer px-2">Bukit Batok</div>
-                                <div class="single-sub-nav cursor-pointer px-2">Bukit Panjang</div>
-                                <div class="single-sub-nav cursor-pointer px-2">Bukit Timah</div>
-                                <div class="single-sub-nav cursor-pointer px-2">Bugis</div>
-                            </div>
-                        </div>
-                        <div class="d-flex mb-3 px-4">
-                            <div class="font-weight-bold mr-4">C</div>
-                            <div class="w-100">
-                                <div class="single-sub-nav cursor-pointer px-2">Changi</div>
-                                <div class="single-sub-nav cursor-pointer px-2">Chinatown</div>
-                                <div class="single-sub-nav cursor-pointer px-2">Choa Chu Kang</div>
-                                <div class="single-sub-nav cursor-pointer px-2">City Hall</div>
-                                <div class="single-sub-nav cursor-pointer px-2">Clarke Quay</div>
-                                <div class="single-sub-nav cursor-pointer px-2">Clementi</div>
-                            </div>
-                        </div>
-                        <div class="d-flex px-4">
-                            <div class="font-weight-bold mr-4">D</div>
-                            <div class="w-100">
-                                <div class="single-sub-nav cursor-pointer px-2">Dairy Farm</div>
-                                <div class="single-sub-nav cursor-pointer px-2">Dover</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="sub-nav font-form position-absolute h-100 d-flex flex-column py-4" id="sub-nav-locations">
+                    <div class="sub-nav font-form position-absolute h-100 d-flex flex-column py-4" id="sub-nav-location">
                         <div class="form-group px-3 mb-0">
-                            <input type="text" class="form-control" placeholder="Search Location" id="search-locations">
+                            <input type="text" class="form-control" placeholder="Search Place" id="search-locations">
                             <hr class="w-50 border-top border-light mt-4">
                         </div>
 
                         <?php 
-                            $items = $this->api()->search('items', ['sort_by'=>'dcterms:title', 'sort_order'=>'asc'])->getContent();
+                            $items = $this->api()->search('items', ['site_id'=>1, 'sort_by'=>'dcterms:title', 'sort_order'=>'asc', 'is_public'=>true])->getContent();
 
                             foreach($items as $item) {
                         ?>

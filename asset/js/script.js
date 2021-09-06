@@ -62,7 +62,7 @@ $(document).ready(function() {
 
 	$(".single-year-select").click(function() {
 		if(!$(this).hasClass("active")) {
-			var yearToView = $(this).data("year-view");
+			var numView = $(this).data("num-view");
 
 			// Deselect the current overlay
 			$(".single-year-select.active").each(function() {
@@ -70,8 +70,8 @@ $(document).ready(function() {
 			})
 
 			// Activate overlay
-			if(yearToView !== "default") {
-				var numToSelect = parseInt(yearToView);
+			if(numView !== "default") {
+				var numToSelect = parseInt(numView);
 				($(".leaflet-control-layers-overlays .leaflet-control-layers-selector")[numToSelect]).click();
 			} else {
 				let numLayers = $(".leaflet-control-layers-overlays .leaflet-control-layers-selector").length;

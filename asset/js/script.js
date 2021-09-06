@@ -60,27 +60,22 @@ $(document).ready(function() {
 		}
 	})
 
-	$(".leaflet-control-layers-overlays .leaflet-control-layers-selector").each(function() {
-		$(this).click();
-	})
-
 	$(".single-year-select").click(function() {
 		if(!$(this).hasClass("active")) {
 			var yearToView = $(this).data("year-view");
 
-			// Deselect any checked overlays
+			// Deselect the current overlay
 			$(".single-year-select.active").each(function() {
 				$(this).removeClass("active");
 			})
 
-			$(".leaflet-control-layers-overlays .leaflet-control-layers-selector:checked").each(function() {
-				$(this).click();
-			})
-
 			// Activate overlay
 			if(yearToView !== "default") {
-				var checkboxNumToCheck = parseInt(yearToView);
-				($(".leaflet-control-layers-overlays .leaflet-control-layers-selector")[0]).click();
+				var numToSelect = parseInt(yearToView);
+				($(".leaflet-control-layers-overlays .leaflet-control-layers-selector")[numToSelect]).click();
+			} else {
+				let numLayers = $(".leaflet-control-layers-overlays .leaflet-control-layers-selector").length;
+				($(".leaflet-control-layers-overlays .leaflet-control-layers-selector")[numLayers-1]).click();
 			}
 
 			$(this).addClass("active");

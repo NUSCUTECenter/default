@@ -72,9 +72,8 @@ $userBar = $this->userBar();
                         'maxDepth' => $this->themeSetting('nav_depth') - 1
                     ]);
                     ?>
-                    <li class="d-flex align-items-center mx-3 pl-3 cursor-pointer">
-                        <a href="https://google.com" target="_blank">Contribute Information! <i class="fas fa-external-link-alt"></i></a>
-                    </li>
+                    <li class="d-flex align-items-center mx-3 cursor-pointer" data-toggle="modal" data-target="#add-to-salty">Add to SALTY</li>
+                    <li class="d-flex align-items-center mx-3 cursor-pointer" data-toggle="modal" data-target="#more-salty">SALTY Expanded</li>
                     <li class="d-flex align-items-center mx-3 cursor-pointer" data-toggle="modal" data-target="#about-us">About SALTY</li>
                 </nav>
             </header>
@@ -105,7 +104,7 @@ $userBar = $this->userBar();
                             </div>
                             <hr class="w-50 border-top border-light mt-4">
                             <?php 
-                                $years = array("1978", "1983", "1987", "1993");
+                                $years = array(1911, 1943, 1963, 1966, 1970, 1975, 1980, 1985, 1990, 1995, 1998, 2002, 2005, 2010);
 
                                 foreach($years as $key=>$value) {
                             ?>
@@ -145,6 +144,21 @@ $userBar = $this->userBar();
                     </footer>
                 </div>
                 <?php echo $this->content; ?>
+            </div>
+        </div>
+        <div class="modal fade" id="add-to-salty" tabindex="-1" role="dialog" aria-labelledby="addToSaltyLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="addToSaltyLabel">Add to Salty</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="font-form modal-body">
+                        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeS2-vKXUT02Xy323pdBDJjlZN-gRZlybcEGWfIEDTKz9N5vw/viewform?embedded=true" width="640" height="700" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe> 
+                    </div>
+                </div>
             </div>
         </div>
         <div class="modal fade" id="about-us" tabindex="-1" role="dialog" aria-labelledby="aboutUsLabel" aria-hidden="true">
@@ -188,6 +202,14 @@ $userBar = $this->userBar();
                                 </div>
                             </div>
                             <div class="d-flex mb-3">
+                                <div class="col-4 pl-0 font-weight-bold">Map Images</div>
+                                <div class="col-8 px-0">
+                                    <div class="mb-2"><a href="https://libmaps.nus.edu.sg/" target="_blank">Libmaps <sup><i class="fas fa-external-link-alt"></i></sup></a></div>
+                                    <p class="mb-2">NUS Department of Geography</p>
+                                    <p class="mb-1">NUS Libraries</p>
+                                </div>
+                            </div>
+                            <div class="d-flex mb-3">
                                 <div class="col-4 pl-0 font-weight-bold">Supported by</div>
                                 <div class="col-8 px-0">
                                     <div id="nhb-logo"></div>
@@ -199,6 +221,21 @@ $userBar = $this->userBar();
                             &copy; 2022 Singapore Architecture Literacy Network (SALTY). All Rights Reserved.<br/>
                             All content copyright belongs to original authors and are used for non-commercial, educational purposes under Fair Use.
                         </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="more-salty" tabindex="-1" role="dialog" aria-labelledby="moreSaltyLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="moreSaltyLabel">Salty Expanded</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="font-form modal-body">
+                        <p class="mb-4">- Coming Soon! - </p>
                     </div>
                 </div>
             </div>

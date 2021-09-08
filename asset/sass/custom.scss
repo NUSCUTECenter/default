@@ -370,6 +370,19 @@ header {
     }
 }
 
+#add-to-salty {
+    z-index: 20000;
+
+    .modal-dialog {
+        color: #333;
+        max-width: 675px;
+
+        iframe {
+            background-color: #CCC;
+        }
+    }
+}
+
 
 #about-us {
     z-index: 20000;
@@ -377,6 +390,10 @@ header {
     .modal-dialog {
         color: #333;
         max-width: 600px;
+
+        a {
+            color: #0dcaf0;
+        }
 
         #nhb-logo {
             background-image: url("../images/nhb.png");

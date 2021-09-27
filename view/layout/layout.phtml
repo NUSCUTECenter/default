@@ -75,6 +75,7 @@ $userBar = $this->userBar();
                     <li class="d-flex align-items-center mx-3 cursor-pointer" data-toggle="modal" data-target="#add-to-salty">Add to SALTY</li>
                     <li class="d-flex align-items-center mx-3 cursor-pointer" data-toggle="modal" data-target="#more-salty">SALTY Expanded</li>
                     <li class="d-flex align-items-center mx-3 cursor-pointer" data-toggle="modal" data-target="#about-us">About SALTY</li>
+                    <li class="d-flex align-items-center mx-3 cursor-pointer" data-toggle="modal" data-target="#map-credits">Map Credits</li>
                 </nav>
             </header>
             <div class="h-100 position-relative" id="content" role="main">
@@ -100,7 +101,7 @@ $userBar = $this->userBar();
                     <div class="sub-nav position-absolute h-100 d-flex flex-column py-4" id="sub-nav-year">
                         <div class="w-100">
                             <div class="single-sub-nav cursor-pointer px-2 position-relative d-flex justify-content-center align-items-center">
-                                <div class="single-year-select stretched-link active" data-num-view="default" data-year-view="default">Default Map</div>
+                                <div class="single-year-select stretched-link active" data-num-view="default" data-year-view="default">Present Day</div>
                             </div>
                             <hr class="w-50 border-top border-light mt-4">
                             <?php 
@@ -201,14 +202,7 @@ $userBar = $this->userBar();
                                     <p class="mb-1">Mr. Justin Eng<br/><span class="font-small">(Keio-NUS CUTE Centre)</span></p>
                                 </div>
                             </div>
-                            <div class="d-flex mb-3">
-                                <div class="col-4 pl-0 font-weight-bold">Map Images</div>
-                                <div class="col-8 px-0">
-                                    <div class="mb-2"><a href="https://libmaps.nus.edu.sg/" target="_blank">Libmaps <sup><i class="fas fa-external-link-alt"></i></sup></a></div>
-                                    <p class="mb-2">NUS Department of Geography</p>
-                                    <p class="mb-1">NUS Libraries</p>
-                                </div>
-                            </div>
+                            
                             <div class="d-flex mb-3">
                                 <div class="col-4 pl-0 font-weight-bold">Supported by</div>
                                 <div class="col-8 px-0">
@@ -219,8 +213,104 @@ $userBar = $this->userBar();
 
                         <p class="font-small mb-0">
                             &copy; 2022 Singapore Architecture Literacy Network (SALTY). All Rights Reserved.<br/>
-                            All content copyright belongs to original authors and are used for non-commercial, educational purposes under Fair Use.
+                            All content copyright belongs to original authors and are used for non-commercial, educational purposes under Fair Use.<br/><br/>
+                            <span class="font-weight-bold">Disclaimer:</span> The views expressed here are solely those of the authors in their private capacity and do not in any way represent the views of the National Heritage Board and/or any government agencies.
                         </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="map-credits" tabindex="-1" role="dialog" aria-labelledby="mapCreditsLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="mapCreditsLabel">Map Credits</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="font-form modal-body">
+                        <div class="d-flex flex-column mb-0">
+                            <p class="mb-4">All map layers and images are used with permission from <a href="https://libmaps.nus.edu.sg/" target="_blank">Libmaps <sup><i class="fas fa-external-link-alt"></i></sup></a>, NUS Department of Geography and NUS Libraries.</p>
+                            <div class="d-flex mb-3">
+                                <div class="col-3 pl-0 font-weight-bold">Year 1911</div>
+                                <div class="col-9 px-0">
+                                    <div class="mb-2">Geographical Section, General Staff 1911. Map of the Island of Singapore and its Dependencies, 1:63,360. [London]: War Office. In: "Historical Maps of Singapore, digitised by Department of Geography, National University of Singapore." https://libmaps.nus.edu.sg.</div>
+                                </div>
+                            </div>
+                            <div class="d-flex mb-3">
+                                <div class="col-3 pl-0 font-weight-bold">Year 1943</div>
+                                <div class="col-9 px-0">
+                                    <div class="mb-2">Geographical Section, Army Map Service, US Army 1943. Singapore & Johore, 1:63,360. First Edition - AMS 1. Washington DC: War Office. In: "Historical Maps of Singapore, digitised by Department of Geography, National University of Singapore." https://libmaps.nus.edu.sg.</div>
+                                </div>
+                            </div>
+                            <div class="d-flex mb-3">
+                                <div class="col-3 pl-0 font-weight-bold">Year 1963</div>
+                                <div class="col-9 px-0">
+                                    <div class="mb-2">Assistant Director of Survey, Far East Land Forces 1963. Singapore, 1:63,360. Series GSGS 4923, Sheet Singapore, Edition 2-GSGS. [Singapore]: War Office & Air Ministry. In: "Historical Maps of Singapore, digitised by Department of Geography, National University of Singapore." https://libmaps.nus.edu.sg.</div>
+                                </div>
+                            </div>
+                            <div class="d-flex mb-3">
+                                <div class="col-3 pl-0 font-weight-bold">Year 1966</div>
+                                <div class="col-9 px-0">
+                                    <div class="mb-2">Chief Surveyor, Malaysia 1966. Singapore, 1:25,000. Series L802, Sheet 1 to 7, Edition 1-DNMM. [Kuala Lumpur]: Directorate of National Mapping Malaysia. In: "Historical Maps of Singapore, digitised by Department of Geography, National University of Singapore." https://libmaps.nus.edu.sg.</div>
+                                </div>
+                            </div>
+                            <div class="d-flex mb-3">
+                                <div class="col-3 pl-0 font-weight-bold">Year 1969</div>
+                                <div class="col-9 px-0">
+                                    <div class="mb-2">Chief Surveyor, Singapore 1969. Singapore, 1:63,360. Singapore Series 1, Edition 1. [Singapore]: War Office & Air Ministry. In: "Historical Maps of Singapore, digitised by Department of Geography, National University of Singapore." https://libmaps.nus.edu.sg.</div>
+                                </div>
+                            </div>
+                            <div class="d-flex mb-3">
+                                <div class="col-3 pl-0 font-weight-bold">Year 1975</div>
+                                <div class="col-9 px-0">
+                                    <div class="mb-2">Mapping Unit, Ministry of Defence 1975. Singapore, 1:25,000. Series SMU 025, Sheet 1 to 8, Edition 1 SMU. Singapore: Mapping Unit, Ministry of Defence. In: "Historical Maps of Singapore, digitised by Department of Geography, National University of Singapore." https://libmaps.nus.edu.sg.</div>
+                                </div>
+                            </div>
+                            <div class="d-flex mb-3">
+                                <div class="col-3 pl-0 font-weight-bold">Year 1983</div>
+                                <div class="col-9 px-0">
+                                    <div class="mb-2">Mapping Unit, Ministry of Defence 1983. Singapore, 1:50,000. Series SMU 075, Edition 3. Singapore: Mapping Unit, Ministry of Defence. In: "Historical Maps of Singapore, digitised by Department of Geography, National University of Singapore." https://libmaps.nus.edu.sg.</div>
+                                </div>
+                            </div>
+                            <div class="d-flex mb-3">
+                                <div class="col-3 pl-0 font-weight-bold">Year 1987</div>
+                                <div class="col-9 px-0">
+                                    <div class="mb-2">Mapping Unit, Ministry of Defence 1987. Singapore, 1:50,000. Series SMU 075, Edition 4. Singapore: Mapping Unit, Ministry of Defence. In: "Historical Maps of Singapore, digitised by Department of Geography, National University of Singapore." https://libmaps.nus.edu.sg.</div>
+                                </div>
+                            </div>
+                            <div class="d-flex mb-3">
+                                <div class="col-3 pl-0 font-weight-bold">Year 1993</div>
+                                <div class="col-9 px-0">
+                                    <div class="mb-2">Mapping Unit, Ministry of Defence 1993. Singapore, 1:50,000. Series SMU 075, Edition 5. Singapore: SO Publication, Ministry of Defence. In: "Historical Maps of Singapore, digitised by Department of Geography, National University of Singapore." https://libmaps.nus.edu.sg.</div>
+                                </div>
+                            </div>
+                            <div class="d-flex mb-3">
+                                <div class="col-3 pl-0 font-weight-bold">Year 1998</div>
+                                <div class="col-9 px-0">
+                                    <div class="mb-2">Mapping Unit, Ministry of Defence 1998. Singapore, 1:50,000. Series SMU 075, Sheet 1, Edition 6. Singapore: SO Publication, Ministry of Defence. In: "Historical Maps of Singapore, digitised by Department of Geography, National University of Singapore." https://libmaps.nus.edu.sg.</div>
+                                </div>
+                            </div>
+                            <div class="d-flex mb-3">
+                                <div class="col-3 pl-0 font-weight-bold">Year 2002</div>
+                                <div class="col-9 px-0">
+                                    <div class="mb-2">Mapping Unit, Ministry of Defence 2002. Singapore, 1:50,000. Series SMU 075, Sheet 1, Edition 7. Singapore: SO Publication, Ministry of Defence. In: "Historical Maps of Singapore, digitised by Department of Geography, National University of Singapore." https://libmaps.nus.edu.sg.</div>
+                                </div>
+                            </div>
+                            <div class="d-flex mb-3">
+                                <div class="col-3 pl-0 font-weight-bold">Year 2005</div>
+                                <div class="col-9 px-0">
+                                    <div class="mb-2">Mapping Unit, Ministry of Defence 2005. Singapore, 1:25,000. Series L802, Sheet 1 to 5 and 7, Edition 10 SMU. Singapore: Mapping Unit, Ministry of Defence. In: "Historical Maps of Singapore, digitised by Department of Geography, National University of Singapore." https://libmaps.nus.edu.sg.</div>
+                                </div>
+                            </div>
+                            <div class="d-flex mb-3">
+                                <div class="col-3 pl-0 font-weight-bold">Year 2010</div>
+                                <div class="col-9 px-0">
+                                    <div class="mb-0">Mapping Unit, Ministry of Defence 2010. Singapore, 1:50,000. Series SMU 075, Sheet 1, Edition 9. Singapore: SO Publication, Ministry of Defence. In: "Historical Maps of Singapore, digitised by Department of Geography, National University of Singapore." https://libmaps.nus.edu.sg.</div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
